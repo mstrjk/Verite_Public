@@ -1,0 +1,311 @@
+Verité is a MSTRJK Creative Solutions & Careers project.
+
+This disclaimer outlines all sources and attributions for the components,
+models, datasets, and libraries used in the creation of the Verité project.
+MSTRJK Creative Solutions & Careers claims no ownership over any third-party
+work listed below; all original license and notice files are retained
+unmodified alongside the components they cover.
+
+
+================================================================
+MACHINE LEARNING MODEL
+================================================================
+
+Verité's toxicity classifier is built on the following chain of work:
+
+1. Base model - "bert-mini" (prajjwal1/bert-mini)
+   Author: Prajjwal Bhargava (Hugging Face: prajjwal1)
+   License: MIT License
+   https://huggingface.co/prajjwal1/bert-mini
+
+2. Fine-tuned & quantized toxicity model - "bert-tiny-toxicity"
+   Author: Gravitee.io
+   Fine-tuning and quantization performed by Gravitee.io on the base model
+   above, trained for multilingual toxicity detection.
+   License: CreativeML Open RAIL++-M License (dated July 26, 2023).
+   The text of that license is Copyright (c) 2023 Stability AI; it governs
+   the fine-tuned model but does not imply Stability AI authored the model.
+   https://huggingface.co/gravitee-io/bert-tiny-toxicity
+
+Verité applies further modifications to this model (re-housing the weights,
+vocabulary, and tokenizer configuration into its own binary asset format and
+running inference through an in-house forward pass). The original copyright,
+license, and NOTICE terms continue to apply and are shipped unchanged in the
+models directory (see LICENSE and NOTICE).
+
+Support the original creators:
+  https://huggingface.co/prajjwal1/bert-mini
+  https://huggingface.co/gravitee-io/bert-tiny-toxicity
+
+
+================================================================
+DATASETS
+================================================================
+
+Multilingual toxicity training data - "textdetox multilingual toxicity dataset"
+   Provider: textdetox / Gravitee.io
+   This dataset was used by Gravitee.io to fine-tune the third-party
+   bert-tiny-toxicity model described above. Verité did not perform this
+   training and does not itself use this dataset (see NO-TRAIN DISCLAIMER).
+   https://huggingface.co/datasets/textdetox/multilingual_toxicity_dataset
+
+The Si.EVE chat filter's match content (its slur and phrase lexicon) is
+in-house data hand-authored by MSTRJK Creative Solutions & Careers from its
+own chat data. It is not derived from any third-party dataset.
+
+The Si.EVE tokenizer's multilingual word-frequency and register lexicon (the
+per-language statistics packed into the shipped dictionary asset) was harvested
+from the HPLT v3 web corpus. Only aggregate per-word statistics (occurrence and
+sentence-presence counts, and averaged web-register shares) are derived and
+shipped; no source document text is reproduced, redistributed, or embedded.
+   HPLT v3 (HPLT/HPLT3.0)
+   Provider: HPLT project (High Performance Language Technologies)
+   License: Creative Commons Zero 1.0 (CC0, public domain dedication)
+   https://hplt-project.org
+   https://data.hplt-project.org/three/
+
+The Si.EVE filter's word-segmentation frequency table blends that in-house
+data with the word-frequency data carried by wordninja (see ALGORITHMS &
+CODE HERITAGE below), whose frequency lists derive from:
+   - Wikipedia / Wikimedia (English word-frequency ranks)
+     https://dumps.wikimedia.org
+   - Leipzig Corpora Collection (Spanish word-frequency data)
+     https://wortschatz.uni-leipzig.de/en/download
+
+The Unicode confusable/homoglyph fold table (confusables.txt) is built from
+Unicode Technical Standard #39 (Unicode Security Mechanisms), (c) Unicode, Inc.
+   https://www.unicode.org/reports/tr39/
+
+
+================================================================
+RESEARCH, EVALUATION & DEVELOPMENT DATA (Hugging Face)
+================================================================
+
+The datasets and auxiliary models below were referenced during the
+research, evaluation, and development of Verité's classification
+components. They were consulted for study and benchmarking only; no
+Verité model was trained on them (see NO-TRAIN DISCLAIMER below). Each
+is grouped under its license and remains the property of its respective
+authors. Sources whose license did not permit this use were deliberately
+excluded.
+
+---- Apache License 2.0 ----
+  bert-base-uncased  [model]
+    https://huggingface.co/bert-base-uncased
+  FredZhang7/toxi-text-3M  [dataset]
+    https://huggingface.co/datasets/FredZhang7/toxi-text-3M
+  google/electra-base-discriminator  [model]
+    https://huggingface.co/google/electra-base-discriminator
+  GroNLP/hateBERT  [model]
+    https://huggingface.co/GroNLP/hateBERT
+  Hate-speech-CNERG/dehatebert-mono-english  [model]
+    https://huggingface.co/Hate-speech-CNERG/dehatebert-mono-english
+  mookiezi/Discord-Dialogues  [dataset]
+    https://huggingface.co/datasets/mookiezi/Discord-Dialogues
+  mookiezi/Discord-OpenMicae  [dataset]
+    https://huggingface.co/datasets/mookiezi/Discord-OpenMicae
+  OpenAssistant/oasst1  [dataset]
+    https://huggingface.co/datasets/OpenAssistant/oasst1
+  sentence-transformers/all-MiniLM-L6-v2  [model]
+    https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
+  Sp1786/multiclass-sentiment-analysis-dataset  [dataset]
+    https://huggingface.co/datasets/Sp1786/multiclass-sentiment-analysis-dataset
+
+---- MIT License ----
+  Anthropic/hh-rlhf  [dataset]
+    https://huggingface.co/datasets/Anthropic/hh-rlhf
+  microsoft/MiniLM-L12-H384-uncased  [model]
+    https://huggingface.co/microsoft/MiniLM-L12-H384-uncased
+  mteb/banking77  [dataset]
+    https://huggingface.co/datasets/mteb/banking77
+  rojagtap/bookcorpus  [dataset]
+    https://huggingface.co/datasets/rojagtap/bookcorpus
+  SinclairSchneider/tweets_about_german_politicians_jan_feb_2025_reddit_and_telegram  [dataset]
+    https://huggingface.co/datasets/SinclairSchneider/tweets_about_german_politicians_jan_feb_2025_reddit_and_telegram
+
+---- Creative Commons Attribution 4.0 (CC BY 4.0) ----
+  allenai/soda  [dataset]
+    https://huggingface.co/datasets/allenai/soda
+  deepmind/code_contests  [dataset]
+    https://huggingface.co/datasets/deepmind/code_contests
+  fvdfs41/Discord-Unveiled  [dataset]
+    https://huggingface.co/datasets/fvdfs41/Discord-Unveiled
+  gplsi/SocialTOX  [dataset]
+    https://huggingface.co/datasets/gplsi/SocialTOX
+  IIC/socialdisner  [dataset]
+    https://huggingface.co/datasets/IIC/socialdisner
+  Paul/hatecheck-french  [dataset]
+    https://huggingface.co/datasets/Paul/hatecheck-french
+  Paul/hatecheck-italian  [dataset]
+    https://huggingface.co/datasets/Paul/hatecheck-italian
+  Paul/hatecheck-portuguese  [dataset]
+    https://huggingface.co/datasets/Paul/hatecheck-portuguese
+  SaisExperiments/Discord-Unveiled-Compressed  [dataset]
+    https://huggingface.co/datasets/SaisExperiments/Discord-Unveiled-Compressed
+  shibing624/sharegpt_gpt4  [dataset]
+    https://huggingface.co/datasets/shibing624/sharegpt_gpt4
+  SocialGrep/one-million-reddit-jokes  [dataset]
+    https://huggingface.co/datasets/SocialGrep/one-million-reddit-jokes
+  SocialGrep/the-reddit-climate-change-dataset  [dataset]
+    https://huggingface.co/datasets/SocialGrep/the-reddit-climate-change-dataset
+  webis/tldr-17  [dataset]
+    https://huggingface.co/datasets/webis/tldr-17
+
+---- Creative Commons Attribution-ShareAlike 3.0 / GFDL ----
+  Salesforce/wikitext  [dataset]
+    https://huggingface.co/datasets/Salesforce/wikitext
+  wikimedia/wikipedia  [dataset]
+    https://huggingface.co/datasets/wikimedia/wikipedia
+
+---- Creative Commons Zero 1.0 (CC0, public domain dedication) ----
+  nthngdy/oscar-small  [dataset]
+    https://huggingface.co/datasets/nthngdy/oscar-small
+  oscar-corpus/oscar  [dataset]
+    https://huggingface.co/datasets/oscar-corpus/oscar
+  oscar-corpus/OSCAR-2301  [dataset]
+    https://huggingface.co/datasets/oscar-corpus/OSCAR-2301
+  Skylion007/openwebtext  [dataset]
+    https://huggingface.co/datasets/Skylion007/openwebtext
+
+---- Open Data Commons Attribution License (ODC-By) ----
+  allenai/c4  [dataset]
+    https://huggingface.co/datasets/allenai/c4
+  allenai/WildChat  [dataset]
+    https://huggingface.co/datasets/allenai/WildChat
+  allenai/WildChat-1M  [dataset]
+    https://huggingface.co/datasets/allenai/WildChat-1M
+  bertin-project/mc4-es-sampled  [dataset]
+    https://huggingface.co/datasets/bertin-project/mc4-es-sampled
+  gsarti/clean_mc4_it  [dataset]
+    https://huggingface.co/datasets/gsarti/clean_mc4_it
+  HuggingFaceFW/fineweb  [dataset]
+    https://huggingface.co/datasets/HuggingFaceFW/fineweb
+  HuggingFaceFW/fineweb-2  [dataset]
+    https://huggingface.co/datasets/HuggingFaceFW/fineweb-2
+
+Note: bert-base-uncased is listed here as an auxiliary model used during
+development. The classifier Verité ships is built on prajjwal1/bert-mini
+as described in the MACHINE LEARNING MODEL section above.
+
+
+================================================================
+NO-TRAIN DISCLAIMER
+================================================================
+
+Verité did not train, fine-tune, or otherwise produce any machine-learning
+model from the datasets listed above. The shipped toxicity classifier is a
+pre-existing third-party model (gravitee-io/bert-tiny-toxicity), used as
+distributed under its own license; Verité's only modification is the
+re-housing of its already-trained weights into a different file format.
+
+The datasets above were consulted during research and evaluation only. No
+Verité model was trained on them, and no dataset content is reproduced,
+redistributed, or embedded in the shipped product. To the best of MSTRJK
+Creative Solutions & Careers' knowledge, Verité contains no direct
+infringement of any listed work; each is credited here purely as an
+acknowledgement of the resources referenced during development.
+
+
+================================================================
+ALGORITHMS & CODE HERITAGE
+================================================================
+
+wordninja (keredson/wordninja)
+   The probabilistic word-segmentation algorithm (unigram-cost dynamic
+   programming) used by the Si.EVE filter's de-obfuscation pass is ported
+   from wordninja, and wordninja's word-frequency data (Wikipedia- and
+   Leipzig-derived, see DATASETS above) is blended into the filter's
+   segmentation table alongside the in-house lexicon.
+   https://github.com/keredson/wordninja
+
+Fritsch-Carlson monotone cubic interpolation
+   The monotone score-to-multiplier curve used by the trust system is a
+   standard published numerical method (Fritsch & Carlson, 1980). It is a
+   mathematical technique, not code taken from any specific project.
+
+VLEX dictionary codec
+   The Si.EVE tokenizer's shipped dictionary uses an in-house binary format
+   built by MSTRJK Creative Solutions & Careers. Its design draws on standard,
+   published data-compression techniques, used as general methods rather than
+   as code from any specific project: asymmetric numeral systems (rANS) range
+   coding, front-coded and restart-indexed key blocks (SSTable-style), a static
+   phrase substitution code (FSST-style), joint vector quantization for the
+   register vectors, and SipHash-2-4 for the exact hot-word index. These are
+   mathematical and algorithmic techniques; no third-party codec code is
+   included.
+
+LiteBans
+   The Veritesauver moderation command grammar and Entry record shape are
+   modelled on the LiteBans command syntax so that staff muscle memory
+   carries over. Verité shares no code with LiteBans; only the command
+   conventions are mirrored.
+
+bStats
+   Anonymous usage metrics are collected via the bStats library.
+   https://bstats.org
+
+
+================================================================
+GEOLOCATION
+================================================================
+
+MaxMind GeoLite2
+   Country lookups use the MaxMind GeoLite2-Country database and the
+   com.maxmind.geoip2 reader, bound reflectively and only when present.
+   This product includes GeoLite2 data created by MaxMind, available from
+   https://www.maxmind.com
+   When the database is absent, Verité downloads it from the license-free
+   daily-refreshed mirror maintained by P3TERX.
+   https://github.com/P3TERX/GeoLite.mmdb
+
+
+================================================================
+EXTERNAL SERVICES & REFERENCE DATA
+================================================================
+
+Mojang API
+   The public, unauthenticated username-to-UUID endpoint is used as a
+   last-resort resolver for names Verité has never seen locally (the /whois
+   lookup). No API key is used. Minecraft and the Mojang API are the
+   property of Mojang Studios / Microsoft.
+   https://api.mojang.com
+
+Minecraft protocol version table
+   The mapping from a client's numeric protocol version to a human release
+   name uses the wire values published on the Minecraft Wiki.
+   https://minecraft.wiki/w/Protocol_version
+
+TCPShield / proxy real-IP handshake
+   Verité reads the true client IP from the proxy-injected handshake
+   hostname format used by TCPShield-style anti-DDoS proxies. This is
+   interoperation with a documented handshake convention, not a code
+   dependency. TCPShield is the property of its respective owner.
+
+
+================================================================
+LIBRARIES & PLATFORM
+================================================================
+
+  PaperMC / Bukkit API (paper-api)          - server platform API
+  Netty (io.netty)                          - packet-layer chat interception
+  Kyori Adventure & MiniMessage             - text formatting
+  SnakeYAML (org.yaml.snakeyaml)            - configuration parsing
+  XZ for Java (org.tukaani:xz)              - compression of model and legacy .bin assets
+  Skript (ch.njol.skript)                   - optional scripting integration
+  PlaceholderAPI (me.clip)                  - optional placeholder integration
+  LuckPerms (net.luckperms.api)             - optional permissions integration
+  Google Gson / Guava                       - JSON and utilities
+  Jackson (com.fasterxml.jackson)           - JSON processing
+  fastutil (it.unimi.dsi)                   - primitive collections
+  ASM (org.ow2.asm)                         - bytecode utilities
+  SLF4J / Log4j                             - logging facades
+
+Each library remains under its own respective license, held by its
+respective authors.
+
+
+================================================================
+
+(C) 2026 MSTRJK Creative Solutions & Careers. All rights reserved,
+except for the third-party components listed above, which remain the
+property of their respective owners under their respective licenses.
