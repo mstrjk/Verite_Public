@@ -1,0 +1,166 @@
+PROPRIETARY END-USER RUNTIME LICENSE
+
+(C) 2026 MSTRJK Creative Solutions & Careers. All rights reserved.
+
+This License governs access to and use of any official pre-compiled Verite plugin binary ("the Plugin") and any accompanying documentation or assets distributed with it ("the Software"). For all purposes, the term "Version" refers to the specific release of the Plugin that you download, receive, or otherwise access.
+
+By downloading, receiving, accessing, installing, executing, copying, redistributing, or otherwise interacting with the Software, you agree to be bound by the terms of this License.
+
+This is a proprietary license. It is not an open source license and it is not a source-available license. The source code of the Software is private and is not distributed. If and when the Plugin is distributed, it will be made available only in an official pre-compiled, obfuscated form.
+
+1. RUNTIME LICENSE (COMPILED PLUGIN USAGE)
+
+MSTRJK grants any person or entity with lawful access to the Software a worldwide, non-exclusive, non-transferable, revocable license to download, receive, install, execute, and use the official compiled Plugin for its intended purpose within one or more server or runtime environments to which that person or entity has lawful access.
+
+You are expressly permitted to use the official compiled Plugin for any lawful purpose, including personal, educational, community, and commercial server environments, provided that the Plugin itself is not modified, repackaged, or otherwise used in violation of this License.
+
+Lawful access to the Software grants only a license to use and redistribute the Software as expressly permitted by this License. No ownership of the Software or any intellectual property rights is transferred.
+
+2. FREE-OF-CHARGE SOFTWARE REQUIREMENT
+
+If and when the Plugin is distributed, it is intended to be distributed as commercial proprietary software free of charge unless otherwise determined by MSTRJK.
+
+Any subsequent decision to offer the Plugin on a paid basis shall not impose any payment obligation upon any person who lawfully acquired a copy of the Plugin while it was distributed free of charge. Users who obtain the Plugin under free-of-charge distribution may or may not be required to pay for future Versions.
+
+The Plugin may be distributed by MSTRJK, through marketplaces, platforms, or distributors expressly authorized by MSTRJK, or by any person or entity acting in accordance with the redistribution rights granted by this License.
+
+You may redistribute, mirror, re-host, upload, gift, share, or otherwise provide complete and unmodified copies of the Software to any third party, provided that:
+
+(a) the Software is distributed free of charge and without requiring money or other valuable consideration;
+
+(b) the Software is distributed in its complete, official, and unmodified form;
+
+(c) this License and all copyright, attribution, proprietary, and legal notices accompanying the Software remain intact and are included with the redistributed copy;
+
+(d) no person or entity represents a redistributed copy as an official distribution, authorized marketplace listing, endorsement, partnership, or publication of MSTRJK unless expressly authorized in writing by MSTRJK;
+
+(e) no person or entity modifies, repackages, bundles, sublicenses, or incorporates the Software into another distributed product except as expressly authorized by this License or in writing by MSTRJK; and
+
+(f) the redistribution otherwise complies with all terms of this License.
+
+Redistribution permitted under this Section does not transfer ownership of the Software, create a sublicense, or grant the distributor any authority to modify the terms under which the Software is licensed. Each person or entity who receives or accesses the Software is independently subject to this License.
+
+Lawful access to or redistribution of the Software grants only the rights expressly stated in this License. It does not grant any ownership interest in the Software or any right to modify, sublicense, sell, or transfer the Software except as expressly permitted herein.
+
+3. DEFINITIONS
+
+For the purposes of this License:
+
+"Software" means any official pre-compiled Plugin binary together with all documentation, assets, and configuration files distributed with it.
+
+"Plugin" means any official pre-compiled, obfuscated JAR binary of Verite distributed by or on behalf of MSTRJK.
+
+"Derivative Work" means any modified, adapted, translated, merged, transformed, repackaged, or otherwise altered version of the Software or any substantial portion thereof.
+
+"Licensee" means any person or entity that lawfully downloads, receives, accesses, installs, executes, uses, copies, or redistributes the Software in accordance with this License.
+
+4. RESTRICTIONS
+
+Except where expressly permitted by this License or by applicable law, you shall not:
+
+(a) Sale and Monetization
+
+Sell, sublicense, rent, lease, license for consideration, paywall, bundle into a paid product, or otherwise distribute the Software or any Derivative Work in exchange for money or other valuable consideration.
+
+(b) Noncompliant Redistribution
+
+Redistribute, mirror, re-host, upload, publish, transmit, gift, share, or otherwise make the Software available to any third party in a modified, incomplete, misleading, paid, restricted, or otherwise noncompliant form.
+
+Redistribution is permitted only where it complies fully with Section 2 of this License.
+
+You may not remove this License or any copyright, attribution, proprietary, or legal notice from any redistributed copy of the Software.
+
+You may not represent yourself as MSTRJK, as an authorized representative of MSTRJK, or as an official distributor, marketplace, partner, or publisher of the Software without prior written authorization from MSTRJK.
+
+(c) Reverse Engineering
+
+Decompile, disassemble, deobfuscate, reverse engineer, inspect, analyze, or otherwise attempt to derive, reconstruct, recover, or expose the source code, internal structure, algorithms, implementation details, or trade secrets of the Software or any part thereof, except solely to the extent that such activity cannot lawfully be restricted under applicable law.
+
+Where applicable law grants a non-waivable right to perform any activity otherwise prohibited by this Section, that activity may be performed only to the minimum extent and for the specific purpose expressly permitted by such law.
+
+Any source code, pseudocode, reconstructed code, rewritten code, translated code, documentation, technical information, algorithms, implementation details, trade secrets, or other materials obtained, inferred, derived, recreated, or produced through such activity shall not be published, posted, uploaded, transmitted, distributed, disclosed, licensed, sold, shared, or otherwise made available to any third party, except only to the extent that such disclosure is itself expressly required or cannot lawfully be restricted under applicable law.
+
+This restriction applies regardless of whether such materials are copied directly from the Software or are manually rewritten, independently transcribed, reformatted, translated into another programming language, reconstructed from observations, or otherwise reproduced from information obtained through inspection, decompilation, disassembly, deobfuscation, reverse engineering, or analysis of the Software.
+
+Nothing in this limited exception grants any right to distribute the Software, publish or disclose MSTRJK’s non-public source code or trade secrets, create or distribute a competing or substitute implementation, or use information obtained from the Software for any purpose beyond the narrow activity expressly protected by applicable law.
+
+
+(d) Modification
+
+Modify, adapt, patch, merge, translate, transform, or create Derivative Works of the Plugin binary.
+
+(e) Tampering
+
+The Software contains proprietary technology, security mechanisms, and trade secrets. Any unauthorized tampering with or reverse engineering of the Software may compromise its integrity, security, or intended operation. Accordingly, to the fullest extent permitted by applicable law, the following activities are prohibited:
+
+(i) Any attempt to tamper with or reverse engineer the Software is strictly prohibited.
+
+(ii) Any attempt to bypass, disable, or interfere with the Software's protection mechanisms is strictly prohibited.
+
+(iii) Any attempt to remove, alter, or tamper with the Software's licensing, authentication, integrity verification, or protection mechanisms is strictly prohibited.
+
+(iv) Any attempt to circumvent the Software's security measures or gain unauthorized access to its functionality is strictly prohibited.
+
+(v) Any attempt to exploit vulnerabilities or manipulate the Software in unintended ways is strictly prohibited.
+
+(vi) Any attempt to interfere with the normal operation of the Software or its components is strictly prohibited.
+
+Publication of any such materials does not authorize inspection, reconstruction, derivation, or disclosure of any non-public source code, implementation details, trade secrets, or other proprietary information.
+
+(f) Transfer
+
+Transfer, assign, sublicense, or otherwise transfer this License to another person or entity without the prior written consent of MSTRJK.
+
+Permitted redistribution of the Software under Section 2 does not constitute a transfer or assignment of this License. Each recipient receives an independent license directly under these terms upon lawfully accessing or interacting with the Software.
+
+5. TERMINATION
+
+Any violation of this License immediately and automatically terminates all rights granted herein.
+
+Upon termination, you must immediately cease exercising any rights granted by this License and cease all use and redistribution of the Software.
+
+Termination shall not affect any rights or remedies otherwise available to the Copyright Holder under applicable law.
+
+6. INTELLECTUAL PROPERTY
+
+The Software is licensed, not sold.
+
+Except for the limited rights expressly granted by this License, all right, title, and interest in and to the Software, including all copyrights, trade secrets, trademarks, and other intellectual property rights, remain exclusively vested in MSTRJK.
+
+No trademark rights, branding rights, or rights to use the names, logos, or visual identity associated with the Software are granted by this License.
+
+Permission to redistribute the Software does not grant any ownership interest, trademark license, right of endorsement, right of representation, or authority to act on behalf of MSTRJK.
+
+7. DISCLAIMER OF WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, OR THAT THE SOFTWARE WILL OPERATE WITHOUT INTERRUPTION OR ERROR.
+
+YOU ASSUME ALL RISK ARISING FROM THE USE OR REDISTRIBUTION OF THE SOFTWARE.
+
+8. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL MSTRJK OR ANY COPYRIGHT HOLDER, CONTRIBUTOR, OR LICENSOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF DATA, PROFITS, REVENUE, GOODWILL, BUSINESS INTERRUPTION, OR OTHER ECONOMIC LOSS, ARISING FROM OR RELATING TO THE SOFTWARE OR THIS LICENSE, WHETHER BASED IN CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, OR OTHERWISE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+9. GOVERNING LAW
+
+This License shall be governed by and construed in accordance with the laws of the Province of British Columbia, Canada, without regard to its conflict of law principles.
+
+The parties agree that any dispute arising out of or relating to this License or the Software shall be subject to the exclusive jurisdiction of the courts of British Columbia, Canada.
+
+If any provision of this License is determined to be unenforceable, the remaining provisions shall remain in full force and effect.
+
+10. ENTIRE AGREEMENT
+
+This License constitutes the entire agreement governing the Software and supersedes any prior or contemporaneous understandings relating to its licensing.
+
+No waiver of any provision shall be effective unless made in writing by the Copyright Holder.
+
+11. CONTINUATION OF OBLIGATIONS
+
+The rights, obligations, restrictions, and responsibilities established by this License are intended to preserve the integrity, security, and usability of the Software and shall continue to apply throughout the duration of this License and, where applicable, after its termination.
+
+If and when the Software is distributed in an obfuscated form, Licensees will be prohibited from inspecting, modifying, or otherwise tampering with the Software. MSTRJK agrees to make commercially reasonable efforts to provide lawful means of resolving reproducible defects, licensing issues, or operational problems reported by Licensees. Such assistance may include software updates, patches, replacement builds, configuration guidance, or other remedies determined appropriate by MSTRJK.
+
+Licensees agree to cooperate in good faith by providing sufficient information to reproduce reported issues, using the official unmodified Software, and refraining from unauthorized modification or inspection while such issues are being investigated.
+
+Nothing in this Section shall be construed as creating a guarantee that every defect will be corrected, requiring MSTRJK to provide support for any specific period of time, or limiting the warranty disclaimer or limitation of liability contained elsewhere in this License.
