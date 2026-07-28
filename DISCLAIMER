@@ -11,47 +11,38 @@ unmodified alongside the components they cover.
 MACHINE LEARNING MODEL
 ================================================================
 
-Verité's toxicity classifier is built on the following chain of work:
+Verité's toxicity classifier is an in-house model built and trained by MSTRJK
+Creative Solutions & Careers from the ground up. It is not derived from, nor
+does it re-house the weights of, any third-party model. It was trained
+exclusively on MSTRJK's own hand-authored chat data (see DATASETS below); no
+third-party dataset was used to train it.
 
-1. Base model - "bert-mini" (prajjwal1/bert-mini)
-   Author: Prajjwal Bhargava (Hugging Face: prajjwal1)
-   License: MIT License
-   https://huggingface.co/prajjwal1/bert-mini
+The model's weights and configuration ship in Verité's own binary asset format
+(vbin1) and inference runs through an in-house forward pass.
 
-2. Fine-tuned & quantized toxicity model - "bert-tiny-toxicity"
-   Author: Gravitee.io
-   Fine-tuning and quantization performed by Gravitee.io on the base model
-   above, trained for multilingual toxicity detection.
-   License: CreativeML Open RAIL++-M License (dated July 26, 2023).
-   The text of that license is Copyright (c) 2023 Stability AI; it governs
-   the fine-tuned model but does not imply Stability AI authored the model.
-   https://huggingface.co/gravitee-io/bert-tiny-toxicity
-
-Verité applies further modifications to this model (re-housing the weights,
-vocabulary, and tokenizer configuration into its own binary asset format and
-running inference through an in-house forward pass). The original copyright,
-license, and NOTICE terms continue to apply and are shipped unchanged in the
-models directory (see LICENSE and NOTICE).
-
-Support the original creators:
-  https://huggingface.co/prajjwal1/bert-mini
-  https://huggingface.co/gravitee-io/bert-tiny-toxicity
+The only third-party data involved anywhere in the classification pipeline is
+in the construction of the tokenizer, which is described in the DATASETS
+section below and uses only permissively licensed sources.
 
 
 ================================================================
 DATASETS
 ================================================================
 
-Multilingual toxicity training data - "textdetox multilingual toxicity dataset"
-   Provider: textdetox / Gravitee.io
-   This dataset was used by Gravitee.io to fine-tune the third-party
-   bert-tiny-toxicity model described above. Verité did not perform this
-   training and does not itself use this dataset (see NO-TRAIN DISCLAIMER).
-   https://huggingface.co/datasets/textdetox/multilingual_toxicity_dataset
+The in-house toxicity classifier was trained only on MSTRJK Creative Solutions
+& Careers' own hand-authored chat data. No third-party dataset was used to
+train it.
 
 The Si.EVE chat filter's match content (its slur and phrase lexicon) is
-in-house data hand-authored by MSTRJK Creative Solutions & Careers from its
-own chat data. It is not derived from any third-party dataset.
+likewise in-house data hand-authored by MSTRJK Creative Solutions & Careers
+from its own chat data. It is not derived from any third-party dataset.
+
+The only third-party datasets Verité touches are used to build the Si.EVE
+tokenizer's word-frequency and register statistics, described below. Only
+aggregate per-word statistics are derived and shipped; no source document text
+is reproduced, redistributed, or embedded, and only sources under broad,
+permissive licenses (CC0, CC-BY, CC-BY-SA / GFDL, ODC-By, Apache-2.0, MIT) are
+used.
 
 The Si.EVE tokenizer's multilingual word-frequency and register lexicon (the
 per-language statistics packed into the shipped dictionary asset) was harvested
@@ -78,50 +69,53 @@ Unicode Technical Standard #39 (Unicode Security Mechanisms), (c) Unicode, Inc.
 
 
 ================================================================
-RESEARCH, EVALUATION & DEVELOPMENT DATA (Hugging Face)
+TOKENIZER CONSTRUCTION DATA (Hugging Face)
 ================================================================
 
-The datasets and auxiliary models below were referenced during the
-research, evaluation, and development of Verité's classification
-components. They were consulted for study and benchmarking only; no
-Verité model was trained on them (see NO-TRAIN DISCLAIMER below). Each
-is grouped under its license and remains the property of its respective
-authors. Sources whose license did not permit this use were deliberately
-excluded.
+The datasets below were accessed while building the Si.EVE tokenizer's
+multilingual word-frequency and register statistics. A large volume of data
+was surveyed and most of it was ultimately discarded; every source is listed
+here as possibly-used out of an abundance of caution, because over-crediting
+is harmless while under-crediting is not. NO Verité machine-learning model was
+trained on any of them (the classifier was trained only on MSTRJK's own chat
+data, see MACHINE LEARNING MODEL and NO-TRAIN sections).
+
+Only sources under broad, permissive licenses were ever downloaded or used.
+Every entry below is grouped under its license and remains the property of its
+respective authors. Any source without a clearly permissive license was
+deliberately excluded.
 
 ---- Apache License 2.0 ----
-  bert-base-uncased  [model]
-    https://huggingface.co/bert-base-uncased
+  BothBosu/multi-agent-scam-conversation  [dataset]
+    https://huggingface.co/datasets/BothBosu/multi-agent-scam-conversation
+  BothBosu/scam-dialogue  [dataset]
+    https://huggingface.co/datasets/BothBosu/scam-dialogue
   FredZhang7/toxi-text-3M  [dataset]
     https://huggingface.co/datasets/FredZhang7/toxi-text-3M
-  google/electra-base-discriminator  [model]
-    https://huggingface.co/google/electra-base-discriminator
-  GroNLP/hateBERT  [model]
-    https://huggingface.co/GroNLP/hateBERT
-  Hate-speech-CNERG/dehatebert-mono-english  [model]
-    https://huggingface.co/Hate-speech-CNERG/dehatebert-mono-english
   mookiezi/Discord-Dialogues  [dataset]
     https://huggingface.co/datasets/mookiezi/Discord-Dialogues
   mookiezi/Discord-OpenMicae  [dataset]
     https://huggingface.co/datasets/mookiezi/Discord-OpenMicae
   OpenAssistant/oasst1  [dataset]
     https://huggingface.co/datasets/OpenAssistant/oasst1
-  sentence-transformers/all-MiniLM-L6-v2  [model]
-    https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
   Sp1786/multiclass-sentiment-analysis-dataset  [dataset]
     https://huggingface.co/datasets/Sp1786/multiclass-sentiment-analysis-dataset
 
 ---- MIT License ----
   Anthropic/hh-rlhf  [dataset]
     https://huggingface.co/datasets/Anthropic/hh-rlhf
-  microsoft/MiniLM-L12-H384-uncased  [model]
-    https://huggingface.co/microsoft/MiniLM-L12-H384-uncased
+  DQN-Labs/discord_scam_detection  [dataset]
+    https://huggingface.co/datasets/DQN-Labs/discord_scam_detection
+  Hexye/discord-scams  [dataset]
+    https://huggingface.co/datasets/Hexye/discord-scams
   mteb/banking77  [dataset]
     https://huggingface.co/datasets/mteb/banking77
   rojagtap/bookcorpus  [dataset]
     https://huggingface.co/datasets/rojagtap/bookcorpus
   SinclairSchneider/tweets_about_german_politicians_jan_feb_2025_reddit_and_telegram  [dataset]
     https://huggingface.co/datasets/SinclairSchneider/tweets_about_german_politicians_jan_feb_2025_reddit_and_telegram
+  wangyuancheng/discord-phishing-scam-clean  [dataset]
+    https://huggingface.co/datasets/wangyuancheng/discord-phishing-scam-clean
 
 ---- Creative Commons Attribution 4.0 (CC BY 4.0) ----
   allenai/soda  [dataset]
@@ -151,6 +145,12 @@ excluded.
   webis/tldr-17  [dataset]
     https://huggingface.co/datasets/webis/tldr-17
 
+---- Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0) ----
+  Davlan/sib200  [dataset]
+    https://huggingface.co/datasets/Davlan/sib200
+  JAugusto97/told-br  [dataset]
+    https://huggingface.co/datasets/JAugusto97/told-br
+
 ---- Creative Commons Attribution-ShareAlike 3.0 / GFDL ----
   Salesforce/wikitext  [dataset]
     https://huggingface.co/datasets/Salesforce/wikitext
@@ -158,6 +158,10 @@ excluded.
     https://huggingface.co/datasets/wikimedia/wikipedia
 
 ---- Creative Commons Zero 1.0 (CC0, public domain dedication) ----
+  declip/Minecraft-Server-Chat  [dataset]
+    https://huggingface.co/datasets/declip/Minecraft-Server-Chat
+  HPLT/HPLT2.0_cleaned  [dataset]
+    https://huggingface.co/datasets/HPLT/HPLT2.0_cleaned
   nthngdy/oscar-small  [dataset]
     https://huggingface.co/datasets/nthngdy/oscar-small
   oscar-corpus/oscar  [dataset]
@@ -183,27 +187,27 @@ excluded.
   HuggingFaceFW/fineweb-2  [dataset]
     https://huggingface.co/datasets/HuggingFaceFW/fineweb-2
 
-Note: bert-base-uncased is listed here as an auxiliary model used during
-development. The classifier Verité ships is built on prajjwal1/bert-mini
-as described in the MACHINE LEARNING MODEL section above.
-
 
 ================================================================
-NO-TRAIN DISCLAIMER
+TRAINING & NO-TRAIN DISCLAIMER
 ================================================================
 
-Verité did not train, fine-tune, or otherwise produce any machine-learning
-model from the datasets listed above. The shipped toxicity classifier is a
-pre-existing third-party model (gravitee-io/bert-tiny-toxicity), used as
-distributed under its own license; Verité's only modification is the
-re-housing of its already-trained weights into a different file format.
+Verité's shipped toxicity classifier is an in-house model, built and trained
+by MSTRJK Creative Solutions & Careers exclusively on its own hand-authored
+chat data. It is not derived from, and does not re-house the weights of, any
+third-party model.
 
-The datasets above were consulted during research and evaluation only. No
-Verité model was trained on them, and no dataset content is reproduced,
-redistributed, or embedded in the shipped product. To the best of MSTRJK
-Creative Solutions & Careers' knowledge, Verité contains no direct
-infringement of any listed work; each is credited here purely as an
-acknowledgement of the resources referenced during development.
+No Verité machine-learning model was trained, fine-tuned, or otherwise produced
+from any of the third-party datasets listed in this document. Those datasets
+were used only to build the Si.EVE tokenizer's aggregate word statistics; no
+dataset content is reproduced, redistributed, or embedded in the shipped
+product, and only aggregate per-word statistics are derived from them.
+
+Only sources under broad, permissive licenses were ever downloaded or used;
+any source without a clearly permissive license was deliberately excluded. To
+the best of MSTRJK Creative Solutions & Careers' knowledge, Verité contains no
+direct infringement of any listed work; each is credited here purely as an
+acknowledgement of the resources involved during development.
 
 
 ================================================================
@@ -287,7 +291,7 @@ LIBRARIES & PLATFORM
 ================================================================
 
   PaperMC / Bukkit API (paper-api)          - server platform API
-  Netty (io.netty)                          - packet-layer chat interception
+  Netty (io.netty)                          - packet-layer vanish sound/particle muffling
   Kyori Adventure & MiniMessage             - text formatting
   SnakeYAML (org.yaml.snakeyaml)            - configuration parsing
   XZ for Java (org.tukaani:xz)              - compression of model and legacy .bin assets
