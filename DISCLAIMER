@@ -1,37 +1,15 @@
 Verité is a MSTRJK Creative Solutions & Careers project.
 
 This disclaimer outlines all sources and attributions for the components,
-models, datasets, and libraries used in the creation of the Verité project.
+datasets, and libraries used in the creation of the Verité project.
 MSTRJK Creative Solutions & Careers claims no ownership over any third-party
 work listed below; all original license and notice files are retained
 unmodified alongside the components they cover.
 
 
 ================================================================
-MACHINE LEARNING MODEL
-================================================================
-
-Verité's toxicity classifier is an in-house model built and trained by MSTRJK
-Creative Solutions & Careers from the ground up. It is not derived from, nor
-does it re-house the weights of, any third-party model. It was trained
-exclusively on MSTRJK's own hand-authored chat data (see DATASETS below); no
-third-party dataset was used to train it.
-
-The model's weights and configuration ship in Verité's own binary asset format
-(vbin1) and inference runs through an in-house forward pass.
-
-The only third-party data involved anywhere in the classification pipeline is
-in the construction of the tokenizer, which is described in the DATASETS
-section below and uses only permissively licensed sources.
-
-
-================================================================
 DATASETS
 ================================================================
-
-The in-house toxicity classifier was trained only on MSTRJK Creative Solutions
-& Careers' own hand-authored chat data. No third-party dataset was used to
-train it.
 
 The Si.EVE chat filter's match content (its slur and phrase lexicon) is
 likewise in-house data hand-authored by MSTRJK Creative Solutions & Careers
@@ -76,9 +54,8 @@ The datasets below were accessed while building the Si.EVE tokenizer's
 multilingual word-frequency and register statistics. A large volume of data
 was surveyed and most of it was ultimately discarded; every source is listed
 here as possibly-used out of an abundance of caution, because over-crediting
-is harmless while under-crediting is not. NO Verité machine-learning model was
-trained on any of them (the classifier was trained only on MSTRJK's own chat
-data, see MACHINE LEARNING MODEL and NO-TRAIN sections).
+is harmless while under-crediting is not. These sources were used only to
+build the Si.EVE tokenizer's aggregate word statistics (see NO-TRAIN section).
 
 Only sources under broad, permissive licenses were ever downloaded or used.
 Every entry below is grouped under its license and remains the property of its
@@ -189,13 +166,12 @@ deliberately excluded.
 
 
 ================================================================
-TRAINING & NO-TRAIN DISCLAIMER
+NO-TRAIN DISCLAIMER
 ================================================================
 
-Verité's shipped toxicity classifier is an in-house model, built and trained
-by MSTRJK Creative Solutions & Careers exclusively on its own hand-authored
-chat data. It is not derived from, and does not re-house the weights of, any
-third-party model.
+Verité ships no machine-learning model. The Si.EVE chat filter is a
+lexicon- and rules-based system; its match content is in-house data
+hand-authored by MSTRJK Creative Solutions & Careers.
 
 No Verité machine-learning model was trained, fine-tuned, or otherwise produced
 from any of the third-party datasets listed in this document. Those datasets
@@ -227,7 +203,7 @@ Fritsch-Carlson monotone cubic interpolation
    standard published numerical method (Fritsch & Carlson, 1980). It is a
    mathematical technique, not code taken from any specific project.
 
-VLEX dictionary codec
+VLEX9 dictionary codec
    The Si.EVE tokenizer's shipped dictionary uses an in-house binary format
    built by MSTRJK Creative Solutions & Careers. Its design draws on standard,
    published data-compression techniques, used as general methods rather than
@@ -294,7 +270,7 @@ LIBRARIES & PLATFORM
   Netty (io.netty)                          - packet-layer vanish sound/particle muffling
   Kyori Adventure & MiniMessage             - text formatting
   SnakeYAML (org.yaml.snakeyaml)            - configuration parsing
-  XZ for Java (org.tukaani:xz)              - compression of model and legacy .bin assets
+  XZ for Java (org.tukaani:xz)              - compression of shipped assets
   Skript (ch.njol.skript)                   - optional scripting integration
   PlaceholderAPI (me.clip)                  - optional placeholder integration
   LuckPerms (net.luckperms.api)             - optional permissions integration
