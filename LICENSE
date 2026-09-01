@@ -226,6 +226,34 @@ This License constitutes the entire agreement between you and MSTRJK concerning 
 
 Any separate written agreement between you and MSTRJK that expressly states that it modifies or supersedes this License will control to the extent of any conflict.
 
-14. RESERVATION OF RIGHTS
+14. EDUCATIONAL AND SCHOOL INSTITUTION EXCEPTION
+
+Notwithstanding Sections 4.3, 4.4, 4.5, or any other conflicting provision of this License, MSTRJK expressly grants qualifying educational institutions the additional rights described in this Section.
+
+For purposes of this Section, a "Qualifying Educational Institution" means a school, school district, school board, college, university, academy, vocational institution, or other educational institution that is officially established, recognized, accredited, authorized, operated, or governed under applicable public or private educational law or regulation.
+
+Where the Software is acquired, evaluated, deployed, administered, studied, or used by or on behalf of a Qualifying Educational Institution for educational administration, institutional moderation, student or staff safety, cybersecurity, information technology, research, accessibility, compliance, or another legitimate institutional purpose, that institution and its authorized personnel may:
+
+(a) decompile, disassemble, deobfuscate, reverse engineer, inspect, analyze, or otherwise examine the Software;
+
+(b) modify, adapt, patch, translate, transform, or create Derivative Works of the Software;
+
+(c) bypass, disable, replace, alter, or remove technical or protection mechanisms to the extent reasonably necessary to exercise the rights expressly granted by this Section;
+
+(d) configure, integrate, automate, extend, or otherwise adapt the Software for the institution's systems, policies, moderation requirements, educational environment, or operational needs; and
+
+(e) use the Software and information learned from examination of the Software in any manner reasonably connected with the institution's lawful educational or institutional activities.
+
+The rights granted by this Section extend to employees, faculty, administrators, information-technology personnel, contractors, researchers, students acting under institutional authorization, and other persons expressly authorized by the Qualifying Educational Institution to perform activities on its behalf.
+
+Activities expressly authorized by this Section do not constitute a violation of this License, and MSTRJK will not pursue a claim or remedy under this License against a Qualifying Educational Institution or its authorized personnel solely for engaging in conduct expressly permitted by this Section.
+
+This Section does not authorize use of the Software for an unlawful purpose, infringement of third-party rights, unauthorized access to third-party systems or data, or representation that a modified or unofficial version of the Software is an official MSTRJK release.
+
+Unless separately authorized in writing by MSTRJK, this Section does not grant a right to commercially sell or license the Software, MSTRJK's original source code, or a Derivative Work of the Software to the general public.
+
+To the extent this Section conflicts with another provision of this License, this Section controls with respect to a Qualifying Educational Institution and persons acting within the scope of that institution's authorization.
+
+15. RESERVATION OF RIGHTS
 
 All rights not expressly granted under this License are reserved by MSTRJK.
